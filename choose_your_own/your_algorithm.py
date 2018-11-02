@@ -35,9 +35,24 @@ plt.show()
 # your code here!  name your classifier object clf if you want the
 # visualization code (prettyPicture) to show you the decision boundary
 
-# with K - Nearest Neighbours
-from sklearn import neighbors
-clf = neighbors.KNeighborsClassifier(weights="distance")
+# ============================
+# with K - Nearest Neighbours:
+# ============================
+
+# from sklearn import neighbors
+# clf = neighbors.KNeighborsClassifier(weights="distance")
+# clf.fit(features_train, labels_train)
+# pred = clf.predict(features_test)
+# print 'Prediction: ', pred
+# accu = clf.score(features_test, labels_test)
+# print 'Accuracy: ', accu
+
+# ============================
+# with AdaBoost:
+# ============================
+
+from sklearn import ensemble
+clf = ensemble.AdaBoostClassifier()
 clf.fit(features_train, labels_train)
 pred = clf.predict(features_test)
 print 'Prediction: ', pred
