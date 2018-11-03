@@ -51,13 +51,25 @@ plt.show()
 # with AdaBoost:
 # ============================
 
+# from sklearn import ensemble
+# clf = ensemble.AdaBoostClassifier()
+# clf.fit(features_train, labels_train)
+# pred = clf.predict(features_test)
+# print 'Prediction: ', pred
+# accu = clf.score(features_test, labels_test)
+# print 'Accuracy: ', accu
+
+# ============================
+# with Random Forest:
+# ============================
 from sklearn import ensemble
-clf = ensemble.AdaBoostClassifier()
+clf = ensemble.RandomForestClassifier(
+    random_state=157, criterion="entropy",  min_samples_leaf=2)
 clf.fit(features_train, labels_train)
 pred = clf.predict(features_test)
-print 'Prediction: ', pred
+print "Prediction: ", pred
 accu = clf.score(features_test, labels_test)
-print 'Accuracy: ', accu
+print "Accuracy: ", accu
 
 
 try:
