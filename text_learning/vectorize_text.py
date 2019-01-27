@@ -50,9 +50,16 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
         stemed_email = parseOutText(email)
         ### use str.replace() to remove any instances of the words
         ### ["sara", "shackleton", "chris", "germani"]
-        words_to_remove = ["sara", "shackleton", "chris", "germani"]
+
+        #### lesson 12
+        ## quiz 28 answer "sshacklensf"
+        ## quiz 29 answer "cgermannsf"
+        #  adding these words since it appears a lot and is as signature words
+        ##### making algo better!!
+        words_to_remove = ["sara", "shackleton", "chris", "germani", "sshacklensf", "cgermannsf"]
         for word in words_to_remove:
-            stemed_email.replace(word, '')
+            if word in stemed_email:
+                stemed_email = stemed_email.replace(word, '')
 
         ### append the text to word_data
         word_data.append(stemed_email)
